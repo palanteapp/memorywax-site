@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["KYJC62R6BW.com.palanteapp.memorywax"],
+        "components": [
+          { "/": "/invite", "comment": "Friend invites open straight to Accept" },
+          { "/": "/invite/*" },
+          { "/": "/auth", "comment": "Email sign-in links" }
+        ]
+      }
+    ]
+  }
+}
