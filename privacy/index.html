@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2A0508">
 <link rel="icon" href="/assets/memory-wax-logo.png"><link rel="apple-touch-icon" href="/assets/memory-wax-logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/Archivo-normal-100-900-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/site.css?v=13b49edf">
 <script src="/assets/dots.js?v=13b49edf" defer></script>
 </head>
@@ -33,7 +33,7 @@
   <div class="wrap read">
     <p class="kick">Privacy</p>
     <h1>Privacy policy</h1>
-    <p class="lede">Memory Wax · last updated 19 October 2026. In plain words: your collection stays with you, there are no ads and no tracking, and nothing is sold.</p>
+    <p class="lede">Memory Wax · last updated 20 October 2026. In plain words: your collection stays with you, there are no ads and no tracking, and nothing is sold.</p>
   </div>
 </section>
 <section class="band tight">
@@ -54,22 +54,23 @@
     <p>Only when you use a feature, and only what it needs.</p>
     <div class="tblwrap"><table class="tbl">
       <tr><th>Service</th><th>What is sent</th></tr>
-      <tr><td><b>Memory Wax’s own record index</b> (a small server we run on Fly.io)</td><td>Barcodes, catalog numbers, artist and title words, the text of a deadwax etching, and release or person IDs, to find pressings and credits. Lookups are not logged and the catalogue holds only public data. Like any web service it can see your internet address while it answers. One exception, and only when you tap <i>Report this etching</i> on a record: it keeps the Discogs release number and the etching text, with a one-way code made from your Memory Wax account so one person counts once. Not your name, email, collection or location. You can take your reports back in the app (Account), and deleting your account removes them.</td></tr>
+      <tr><td><b>Memory Wax’s own record index</b> (a small server we run on Fly.io)</td><td>Barcodes, catalog numbers, artist and title words, the text of a deadwax etching, and release or person IDs, to find pressings and credits. Lookups are not logged and the catalogue holds only public data. The server also makes a public web page for each pressing (catalogue details and etchings, no personal data, no cookies, no tracking). Like any web service it can see your internet address while it answers. One exception, and only when you tap <i>Report this etching</i> on a record: it keeps the Discogs release number and the etching text, with a one-way code made by the account service so one person counts once. The index never receives your sign-in, account number, name, email, collection or location: the app asks the account service for a signed ticket that is good for ten minutes and carries only that code. You can take your reports back in the app (Account), and deleting your account removes them.</td></tr>
       <tr><td><b>MusicBrainz</b> and the <b>Cover Art Archive</b></td><td>Barcodes, catalog numbers, label names, artist and title words, and release IDs, to find releases, credits, versions and covers.</td></tr>
-      <tr><td><b>Discogs</b> (only if you add a token)</td><td>Your token with each request, plus catalog numbers, artist and title words and song titles; it also reads your collection list. Nothing is written to Discogs. The token stays on your phone, and in backup files you save.</td></tr>
+      <tr><td><b>Discogs</b> (only if you add a token)</td><td>Your token with each request, plus catalog numbers, artist and title words and song titles; it also reads your collection list. Nothing is written to Discogs. The token stays on your phone only; it is never put into a backup file.</td></tr>
       <tr><td><b>Apple</b>: music search, Apple Music, Shazam</td><td>Artist and title words to Apple’s public search; album and song searches and playlists through your own Apple Music account; and, only while you’ve tapped Listen, a short fingerprint of the sound near the phone. No recording is sent or kept. Apple’s privacy policy applies.</td></tr>
       <tr><td><b>Wikipedia and Wikidata</b></td><td>Album titles, artist names and IDs, when you open a record story or a person’s page. Results are kept on your phone for 30 days.</td></tr>
-      <tr><td><b>Google</b></td><td>Only if you tap “Search the web for this runout”: the matrix text and artist, in a Google search. The app’s typefaces also load from Google Fonts.</td></tr>
+      <tr><td><b>Google</b></td><td>Only if you tap “Search the web for this runout”: the matrix text and artist, in a Google search.</td></tr>
       <tr><td><b>Anyone you share with</b></td><td>Whatever you choose to share: a card, a song list, an invite link, a backup or CSV file.</td></tr>
     </table></div>
-    <p>We don’t send these services your name, location, collection, prices or photos.</p>
+    <p>We don’t send these services your name, location, collection, prices or photos. The app and this website serve their own typefaces, so no one’s address goes to Google to draw a page.</p>
 
     <h2>Community accounts (only if you make one)</h2>
     <p>An account is optional and is only for adding friends. If you make one:</p>
     <ul>
       <li><b>Sign-in.</b> With Apple, we receive Apple’s signed token and, the first time, your name if you share it. With email, we receive your email address. Email is used only to sign you in and never shows on your profile. There are no passwords.</li>
-      <li><b>Your profile</b> is stored on a Memory Wax server: your username, your name, a small copy of your photo, and three short answers (where you’re from, what you spin, favorite album). Friends and people who find your username can see it.</li>
-      <li><b>Friend requests, friendships, blocks and reports.</b> A report holds the reason and any note you add. The person you report isn’t told who reported them.</li>
+      <li><b>Your profile</b> is stored on a Memory Wax server: your username, your name, a small copy of your photo, and three short answers (where you’re from, what you spin, favorite album). Friends see all of it. You are <b>private by default</b>: nobody can find you until you turn on “Let people find me”. Then someone who types your <b>exact</b> username sees only your username and name, and your photo only if you also turn on “Show my photo to people who find me”. There is no list to browse, and each account can make 30 searches an hour. If you send someone a friend request, they can see your profile so they can decide, but you can’t see theirs until they accept. A request is capped at 50 waiting at a time.</li>
+      <li><b>Friend requests, friendships, blocks and reports.</b> A report holds the reason, any note you add, and both usernames, and it reaches us by email (sent through Resend) so we can act within about a day. The person you report isn’t told who reported them. We keep the report even if either account is deleted, so evidence can’t be erased: handled reports are removed after one year, or 90 days after either person deleted their account, whichever is sooner.</li>
+      <li><b>Terms and age.</b> When you make an account you confirm you are 13 or older and agree to the <a href="/terms/">Terms of Use</a>. We store which version you agreed to and when. A suspended account is hidden from other people and can’t add friends; we store that it is suspended and why.</li>
       <li><b>Invites.</b> An invite link carries your name, username and answers after the “#” in the link. Browsers don’t send that part to the website’s server.</li>
       <li><b>Your collection is not sent to the server.</b> Prices and places never go to the community server.</li>
     </ul>
@@ -83,16 +84,16 @@
 
     <h2>Your choices</h2>
     <ul>
-      <li><b>Take it with you:</b> Settings → “Download a backup” (everything, with photos) or “Export as CSV”. A backup file contains your prices, places and, if you added one, your Discogs token, so treat it as private.</li>
+      <li><b>Take it with you:</b> Settings → “Download a backup” (everything, with photos) or “Export as CSV”. A backup file contains your prices, places and photos, so treat it as private. It never contains your Discogs token.</li>
       <li><b>Turn off sync:</b> Settings → “Sync with iCloud”.</li>
       <li><b>Pause all sharing:</b> Settings → “Pause all sharing”.</li>
-      <li><b>Delete your community account:</b> Community account → “Delete my account” removes your sign-in, username, profile, friendships, blocks and the reports you filed from the server for good.</li>
+      <li><b>Delete your community account:</b> Community account → “Delete my account” removes your sign-in, username, profile, friendships, blocks and your etching reports from the server for good. If you signed in with Apple, the app also asks Apple to disconnect Memory Wax from your Apple Account. Our hosts may keep backups for a short while after deletion, and the safety copies of reports described above remain for the period stated.</li>
       <li><b>Erase this phone:</b> Settings → “Erase everything on this phone” removes your records, photos and tokens, and signs you out. Sync turns off on that phone and your other devices keep their records. Deleting the app removes its data from the phone, but not what’s in your iCloud.</li>
       <li><b>Camera and microphone:</b> you can refuse either. You can type a barcode or search by name instead, and Listen simply won’t work.</li>
     </ul>
 
     <h2>Children</h2>
-    <p>Memory Wax isn’t for children under 13, and we don’t knowingly collect their data.</p>
+    <p>Memory Wax isn’t for children under 13. The app asks you to confirm you are 13 or older before you make an account, and we delete an account if we learn it belongs to a younger child. We don’t knowingly collect their data.</p>
 
     <h2>Changes</h2>
     <p>If this policy changes in a way that matters, we’ll say so in the app and update the date above. Before anything new is collected, such as friends seeing your shelves, we’ll update this page first.</p>
@@ -109,7 +110,7 @@
     <div><img class="logo" src="/assets/memory-wax-logo.png" alt="Memory Wax. Dig, deeper." width="150" height="150"><p style="font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.25;margin:4px 0 0">The database and community for people who love music, and the records they keep.</p></div>
     <div><h2 class="fh">The app</h2><ul><li><a href="/features/">Features</a></li><li><a href="/how-it-works/">How it works</a></li><li><a href="/beta/">Join the beta</a></li></ul></div>
     <div><h2 class="fh">Learn</h2><ul><li><a href="/guides/">Guides</a></li><li><a href="/guides/getting-started/">Getting started</a></li><li><a href="/help/">Help and FAQ</a></li></ul></div>
-    <div><h2 class="fh">Memory Wax</h2><ul><li><a href="/privacy/">Privacy</a></li><li><a href="/help/#contact">Contact</a></li><li><a href="mailto:info@memorywax.app">info@memorywax.app</a></li></ul></div>
+    <div><h2 class="fh">Memory Wax</h2><ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms of use</a></li><li><a href="/safety/">Community rules</a></li><li><a href="/help/#contact">Contact</a></li><li><a href="mailto:info@memorywax.app">info@memorywax.app</a></li></ul></div>
   </div>
   <small>Memory Wax · Dig, deeper.</small>
 </div></footer>
