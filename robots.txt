@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /invite
+Sitemap: https://memorywax.app/sitemap.xml
