@@ -77,7 +77,7 @@ footer{margin-top:auto;padding-top:30px;text-align:center;font-family:var(--mono
     var qa=[['From',P.hometown],['Spins',P.spins],['Favorite',P.fav_album]].filter(function(x){return x[1]});
     if(qa.length){var dl=el('dl');qa.forEach(function(x){var d=el('div');d.appendChild(el('dt',null,x[0]));d.appendChild(el('dd',null,String(x[1]).slice(0,60)));dl.appendChild(d)});card.appendChild(dl)}
     out.appendChild(card);
-    out.appendChild(el('p','lede',who+' wants to be friends. You’ll see the shelves you share with each other and what you’re both spinning.'));
+    out.appendChild(el('p','lede',who+' wants to be friends. You’ll be connected as friends in Memory Wax.'));
     var q=new URLSearchParams();['i','n','h','c'].forEach(function(k){if(h.get(k))q.set(k,h.get(k))});
     var a=el('a','open','Open in Memory Wax');a.href='memorywax://invite?'+q.toString();out.appendChild(a);
     out.appendChild(el('p','fine','Opens the app on your iPhone or iPad, where you sign in and tap Accept. Memory Wax is in testing: if the button does nothing, ask '+who+' for a TestFlight invite first, then come back to this link. It works once and lasts 14 days.'));
